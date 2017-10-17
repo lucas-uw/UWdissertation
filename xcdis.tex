@@ -1,0 +1,118 @@
+\documentclass [11pt, proquest] {uwthesis}[2016/11/22]
+ 
+%
+% The following line would print the thesis in a postscript font 
+
+% \usepackage{natbib}
+% \def\bibpreamble{\protect\addcontentsline{toc}{chapter}{Bibliography}}
+
+\setcounter{tocdepth}{1}  % Print the chapter and sections to the toc
+ 
+
+% ==========   Local defs and mods
+%
+
+\usepackage{alltt}  %
+
+% packages added by xc
+%\usepackage{subfiles}
+\usepackage{amsmath} 
+\usepackage{graphicx}
+\usepackage{rotating}   % sidewaysfigure
+\usepackage{multirow}  % for multirow cells in tables
+\usepackage[flushleft]{threeparttable}   % for table notes
+\usepackage{xr} % for cross reference
+\usepackage{tabularx}
+
+\newenvironment{demo}
+  {\begin{alltt}\leftskip3em
+     \def\\{\ttfamily\char`\\}%
+     \def\{{\ttfamily\char`\{}%
+     \def\}{\ttfamily\char`\}}}
+  {\end{alltt}}
+ 
+% metafont font.  If logo not available, use the second form
+%
+% \font\mffont=logosl10 scaled\magstep1
+\let\mffont=\sf
+% --- end-of-sample-stuff ---
+ 
+
+
+
+\begin{document}
+ 
+% ==========   Preliminary pages
+\prelimpages
+ 
+%
+% ----- copyright and title pages
+%
+\Title{Understanding Probable Maximum Precipitation and Safety\\
+  of Water Management Infrastructures under a Changing Climate}
+\Author{Xiaodong Chen}
+\Year{2017}
+\Program{Department of Civil and Environmental Engineering}
+
+\Chair{Faisal Hossain}{Professor}{Department of Civil and Environmental Engineering}
+\Signature{Erkan Istanbulluoglu}
+\Signature{L. Ruby Leung}
+
+\copyrightpage
+
+\titlepage
+
+ 
+%
+% ----- abstract
+\setcounter{page}{-1}
+\abstract{%
+Large water management infrastructures, such as high hazard dams located upstream of population centers, are usually designed according to the Probable Maximum Precipitation (PMP) criteria that are traditionally derived using historical records of extreme precipitation. Given the observed climate change in the past century and projected climate change in the next century, it is questionable whether the historical storms and the PMPs they derive are a reliable representation of present or future climate. On the other hand, the linear relationship between precipitation and precipitable water as assumed in the traditional method has been questioned in several studies. As a solution, atmospheric numerical modeling has been explored for physics-based PMP estimations, but no physics-based methods have been well developed up to now, which makes the current studies appear ad-hoc. In this study, we establish a numerical modeling framework (based on Weather Research and Forecasting model) for extreme precipitation simulation, which lays the foundation of model-based PMP estimation. Using this modeling framework, we examine the model reconstructions of various extreme precipitation events since 1905, and find that only those extreme storms after the 1940s can be satisfactorily reconstructed. This lays the basis of storm selection in the physics-based PMP estimation. Through statistical analysis of atmospheric reanalysis data, we examine the relationship between extreme precipitation and the atmospheric conditions, which provides region-specific guidelines to the physics-based PMP estimation. In this physics-based approach, both wind fields and moisture availability should be considered to reasonably maximize the storm magnitude. We also develop a hybrid method that bridges the traditional the physics-based methods, so a smooth transition is made possible for engineering communities. The findings of the study will help to modernize current engineering practice of PMP estimation and to better quantify the failure risk of large water management infrastructures for present and future climate scenarios.
+}
+ 
+
+% ----- contents & etc.
+\tableofcontents
+\listoffigures
+\listoftables
+ 
+% ----- glossary 
+\include{chapters/glossary}
+ 
+%
+% ----- acknowledgments
+\include{chapters/acknowledgement}
+
+%
+% ----- dedication
+%
+\dedication{\begin{center}to my parents, Deying Li and Zhiyong Yang.\end{center}}
+
+%
+% end of the preliminary pages
+ 
+ 
+ 
+% ==========      Text pages
+\textpages
+\include{chapters/chapter1}
+\include{chapters/chapter2}  % JHE
+\include{chapters/chapter3}  % EF
+\include{chapters/chapter4}  % JHM
+\include{chapters/chapter5}  % WRR
+\include{chapters/chapter6}
+
+
+
+% ==========   Bibliography
+\nocite{*}   % include everything in the uwthesis.bib file
+\bibliographystyle{plain}
+\bibliography{xcrefs}
+
+
+\appendix
+\include{chapters/appendixEF}
+\include{chapters/appendixJHM}
+\include{chapters/appendixWRR}
+
+\end{document}
