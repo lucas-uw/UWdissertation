@@ -11,3 +11,4 @@
 *.blg
 
 chapters/*.aux
+chapters/*.log
