@@ -1,0 +1,13 @@
+# Latex intermediate files
+*.aux
+*.bbl
+*.lof
+*.lot
+*.synctex
+*.toc
+*.log
+*.pdf
+*.gz
+*.blg
+
+chapters/*.aux
