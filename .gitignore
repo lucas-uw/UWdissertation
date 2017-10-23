@@ -3,7 +3,7 @@
 *.bbl
 *.lof
 *.lot
-*.synctex
+*.synctex*
 *.toc
 *.log
 *.pdf
